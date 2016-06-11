@@ -5,48 +5,64 @@
     box-sizing: border-box;
     outline: none;
     font-family: 'Lora', serif;
+    font-size: 1.1rem;
+    color: grey;
 }
 
-p {
-    font-size: 1.2rem;
-    color: gray;
+fieldset {
+    border: none;
+    width: 100%;
+    margin: 0 auto;
 }
 
+.darkF {
+    color: #2d3945;
+}
 
-/************************** Reusable Styles **************************/
+.whiteF {
+    color: white;
+}
 
 .center {
     text-align: center;
     margin: 0 auto;
 }
 
-.reset {
-    margin: 0;
-    padding: 0;
+.left {
+    text-align: left;
 }
-
-.relative {
-    position: relative;
-}
-
-
-/************************** Item Specific Styles **************************/
 
 header {
-    background: #21353F;
+    background: #2d3945;
     color: white;
-    padding-top: 37px;
-    padding-bottom: 37px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+.line {
+    height: 10px;
+    width: 100%;
+    border-top: 4px solid #2d3945;
+    border-bottom: 2px solid #2d3945;
+    margin-bottom: 30px;
 }
 
 .message {
-    border-bottom: 4px solid #21353F;
+    margin-top: 30px;
+}
+
+.message h2 {
+    margin-bottom: 10px;
 }
 
 .message p {
-    color: darkgrey;
-    font-size: 1.2em;
-    margin-bottom: 40px;
+    margin-top: 0;
+    margin-bottom: 35px;
+    color: gray;
 }
 
 .wrapper {
@@ -54,9 +70,47 @@ header {
 }
 
 .contact-wrapper {
-    border-top: 2px solid #21353F;
-    margin-top: 5px;
-    text-align: left;
+    border-bottom: 2px solid #2d3945;
+    padding-bottom: 25px;
+}
+
+.contact-information label {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: gray;
+}
+
+.contact-information input,
+.contact-information select {
+    width: 100%;
+    background-color: #eaeaea;
+    height: 45px;
+    border-radius: 5px;
+    border: none;
+    color: black;
+    padding-left: 15px;
+}
+
+.contact-information select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    padding-left: 10px;
+    background-image: url(../img/down_arrow.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    color: grey;
+}
+
+select:valid {
+    color: black;
+}
+
+#zip {
+    display: block;
+    width: 169px;
 }
 
 input::-webkit-input-placeholder {
@@ -66,72 +120,30 @@ input::-webkit-input-placeholder {
     color: grey;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="number"],
-textarea,
-select {
-    width: 100%;
-    max-width: 100%;
-    height: 50px;
-    background: #eaeaea;
-    border-radius: 5px;
-    border: none;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding-left: 10px;
-}
-
-select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    width: 100%;
-    height: 52px;
-    padding-left: 10px;
-    color: grey;
-    background-image: url(../img/down_arrow.png);
-    background-repeat: no-repeat;
-    background-position: right;
-}
-
-select:valid {
-    color: black;
-}
-
-label {
-    font-size: 1.4em;
-    color: darkgray
-}
-
 input:focus,
-select:focus {
-    box-shadow: inset 0 0 0 2px #416589;
+select:focus,
+textarea:focus {
+    box-shadow: inset 0 0 0 2px #46698b;
 }
 
-#zip {
-    width: 169px;
+.newsletter-wrapper legend {
+    padding-top: 25px;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
-    display: none;
+.newsletter > input,
+.newsletter > label {
+    display: block;
+    margin-top: 15px;
 }
 
-.newsletter,
-.newsletter label {
-    text-align: left;
-    display: inline-block;
+.format > input,
+.format > label {
+    display: block;
+    margin-top: -10px;
 }
 
-.newsletter label {
-    padding-right: 10px;
-}
 
-.newsletter-wrapper {
-    text-align: left;
-}
+/*unchecked*/
 
 input[type="checkbox"] + label::before {
     content: "";
@@ -140,7 +152,6 @@ input[type="checkbox"] + label::before {
     display: block;
     float: left;
     margin-right: 10px;
-    margin-bottom: 10px;
     border-radius: 5px;
     background-color: #eaeaea;
 }
@@ -153,19 +164,15 @@ input[type="checkbox"] + label::before {
     background-image: url(../img/checkmark.png);
     background-repeat: no-repeat;
     background-position: center center;
-    box-shadow: inset 0 0 0 2px #416589;
+    box-shadow: inset 0 0 0 2px #46698b;
     width: 23px;
     height: 23px;
 }
 
-.format label {
-    margin-left: 35px;
-}
-
 input[type="radio"] + label::before {
     content: "";
+    display: block;
     float: left;
-    left: 2px;
     margin-right: 10px;
     margin-bottom: 10px;
     border-radius: 100%;
@@ -174,17 +181,39 @@ input[type="radio"] + label::before {
     box-shadow: 0 0 0 0.15em #eaeaea;
     width: .5em;
     height: .5em;
-    position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(25%);
 }
 
 [type="radio"]:checked + label::before {
     border: 3px solid #eaeaea;
-    background: #416589;
-    box-shadow: 0 0 0 0.15em #416589;
+    background: #46698b;
+    box-shadow: 0 0 0 0.15em #46698b;
     width: .5em;
     height: .5em;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    display: none;
+}
+
+#other-topics {
+    margin-top: 30px;
+}
+
+#other-topics label {
+    display: block;
+    margin-bottom: 15px;
+}
+
+textarea {
+    width: 100%;
+    height: 120px;
+    resize: none;
+    border-radius: 5px;
+    background-color: #eaeaea;
+    border: none;
 }
 
 [type="submit"] {
@@ -192,31 +221,48 @@ input[type="radio"] + label::before {
     -moz-appearance: none;
     appearance: none;
     width: 100%;
-    height: 80px;
+    height: 60px;
     border-radius: 5px;
     border: none;
-    background-color: darkcyan;
+    background-color: #4ebbb5;
     color: white;
-    font-size: 1.7rem;
+    font-size: 1.1rem;
 }
 
-#other-topics {
-    margin-top: 30px;
-    text-align: left;
-}
-
-textarea {
-    margin-top: 0;
-    height: 120px;
-    resize: none;
-}
-
-p i {
-    color: #aeaeae;
+i {
+    font-size: .85em;
 }
 
 @media(min-width: 760px) {
+    /* adjust font sizes */
+    h1 {
+        font-size: 1.3em;
+    }
+    .message h2 {
+        font-size: 1.3em;
+        margin-top: 50px;
+    }
+    p {
+        font-size: .8em;
+    }
+    label {
+        font-size: .8em;
+    }
+    /* adjust page layout */
     .wrapper {
-        max-width: 700px;
+        max-width: 600px;
+    }
+    .contact-information label {
+        display: inline-block;
+        width: 29%;
+    }
+    .contact-information input,
+    .contact-information select {
+        display: inline-block;
+        max-width: 70%;
+    }
+    #zip {
+        display: inline-block;
+        max-width: 70%;
     }
 }

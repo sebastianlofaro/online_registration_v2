@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>The Code Review</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700' rel='stylesheet' type='text/css'>
@@ -12,46 +12,38 @@
 
 <body>
     <header class="center">
-        <h1 class="reset">THE CODE REVIEW</h1>
+        <h1 class="whiteF">THE CODE REVIEW</h1>
     </header>
     <div class="wrapper center">
         <div class="message">
-            <h2>Signup for our newsletter</h2>
+            <h2 class="darkF">Signup for our newsletter</h2>
             <p>Get the latest news on how your code is doing right in your inbox</p>
         </div>
+        <div class="line"></div>
         <form>
-            <section class="contact-wrapper">
-                <formset class="contact-information">
-                    <h2>Contact Information</h2>
+            <fieldset class="contact-wrapper left">
+                <legend><b class="darkF">Contact Information</b></legend>
+                <div class="contact-information">
 
-                    <label for="name">Full Name</label>
-                    <br>
-                    <input type="text" id="name" placeholder="Required">
-                    <br>
+                    <div>
+                        <label for="name">Full Name</label>
+                        <input type="text" name="name" id="name" placeholder="Required">
+                    </div>
 
                     <label for="email">Email Address</label>
-                    <br>
-                    <input type="email" id="email" placeholder="Required">
-                    <br>
+                    <input type="email" name="email" id="email" placeholder="Required">
 
                     <label for="phone">Phone Number</label>
-                    <br>
-                    <input type="tel" id="phone">
-                    <br>
+                    <input type="tel" name="phone" id="phone">
 
                     <label for="address">Street Address</label>
-                    <br>
-                    <input type="text" id="address">
-                    <br>
+                    <input type="text" name="address" id="address">
 
                     <label for="city">City</label>
-                    <br>
-                    <input type="text" id="city">
-                    <br>
+                    <input type="text" name="city" id="city">
 
                     <label for="state">State</label>
-                    <br>
-                    <select required>
+                    <select required name="state" id="state">
                         <option value="" disabled selected>Choose State</option>
                         <option value="alabama">Alabama</option>
                         <option value="Alaska">Alaska</option>
@@ -104,31 +96,29 @@
                         <option value="wisconsin">Wisconsin</option>
                         <option value="wyoming">Wyoming</option>
                     </select>
-                    <br>
+
 
                     <label for="zip">Zip Code</label>
-                    <br>
-                    <input type="number" id="zip">
-                    <br>
+                    <input type="text" name="zip" id="zip">
 
-                </formset>
-            </section>
-            <section class="newsletter-wrapper">
-                <h2>Newsletter</h2>
-                <formset class="newsletter">
+                </div>
+            </fieldset>
+            <fieldset class="newsletter-wrapper left">
+                <legend><b class="darkF">Newsletter</b></legend>
+                <div class="newsletter">
                     <p>Select the newsletters you would like to recieve</p>
                     <input type="checkbox" name="newsletters" value="html-news" id="html-news" checked>
                     <label for="html-news">HTML News</label>
-                    <br>
+
                     <input type="checkbox" name="newsletters" value="css-news" id="css-news">
                     <label for="css-news">CSS News</label>
-                    <br>
+
                     <input type="checkbox" name="newsletters" value="javascript-news" id="javascript-news">
                     <label for="javascript-news">Javascript News</label>
 
                     <p>Newsletter format</p>
                     <div class="relative format">
-                        <input type="radio" name="format" value="html" id="html">
+                        <input type="radio" name="format" value="html" id="html" checked>
                         <label for="html">HTML</label>
                     </div>
                     <br>
@@ -136,11 +126,11 @@
                         <input type="radio" name="format" value="plain-text" id="plain-text">
                         <label for="plain-text">Plain text</label>
                     </div>
-                </formset>
-            </section>
-            <div id="other-topics">
-                <p>Other topics you'd like to hear about</p>
-                <textarea></textarea>
+                </div>
+            </fieldset>
+            <div id="other-topics" class="left">
+                <label for="other">Other topics you'd like to hear about</label>
+                <textarea id="other"></textarea>
             </div>
             <br>
             <button type="submit">Sign Up</button>
